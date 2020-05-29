@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+
+
+Who do you like to tag in the photo list?: 
+<br>
+<br>
+
+	{% if error %}
+		<p class="error"><strong>Error:</strong> {{error}}</p>
+	{% endif %}
+
+        {% if message %}
+            {{ message }}
+        {% endif %}
+<br>
+<br>
+
+</form>
+<a href= "/home">GO back to home</a>
+<br>
+<br>
+<a href="/logout">Logout</a>
+
+</body>
+</html>

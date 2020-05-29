@@ -1,0 +1,45 @@
+<html>
+<head>
+</head>
+<body>
+
+
+Which picture would you want to be tagged?: 
+<br>
+<br>
+<form action = "/manage_tag2" method = "GET">
+
+{% for line in user_list %}
+<input type="radio" name="tag_request" value={{line.photoID}} required/>{{line.photoID}}</input>
+	<br>
+{% endfor %}
+<br>
+Tag ID description:
+<br> 
+{% for line in user_list2 %}
+<name="photoName" value={{line.photoID,line.photoOwner,line.filePath}} required/>{{line.photoID,line.photoOwner,line.filePath}}</input>
+	<br>
+{% endfor %}
+<br>
+
+        {% if message %}
+            {{ message }}
+        {% endif %}
+<br>
+<br>
+
+<input type="submit" name = "action" value="Accept" />
+<input type="submit" name = "action" value="Decline" />
+<input type="submit" name = "action" value="Remind me later" />
+
+</form>
+
+<br>
+<br>
+<a href= "/home">GO back to home</a>
+<br>
+<br>
+<a href="/logout">Logout</a>
+
+</body>
+</html>

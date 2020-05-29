@@ -1,0 +1,43 @@
+<html>
+<head>
+</head>
+<body>
+
+
+Who do you like to tag in the photo list?
+<br>
+
+<form action="/tag_user2" method = "POST">
+	<input type = "text" name = "person_tagging" placeholder = "username"> </br>
+<br>
+Which photo would you like to tag the person? 
+<br>
+{% for line in photo_list %}
+<input type="radio" name="photoName" value={{line.photoID}} required/>{{line.photoID}}</input>
+	<br>
+{% endfor %}
+<br>
+<input type="submit" value="Tag User">
+<br>
+<br>
+ID description:
+<br> 
+{% for line in photo_list2 %}
+<name="photoName" value={{line.photoID,line.filePath}} required/>{{line.photoID,line.filePath}}</input>
+	<br>
+{% endfor %}
+<br>
+<div>
+            {% for image in images %}
+
+            <img src="/image/{{image.filePath}}" width="200"/>
+            {% endfor %}
+        </div>
+<br>
+
+</form>
+<a href= "/home">GO back to home</a>
+<br>
+<a href="/logout">Logout</a>
+
+</body>

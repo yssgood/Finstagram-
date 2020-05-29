@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+<body>
+
+
+Which group and user would you like to add?
+<br>
+
+<form action="/add_friend" method = "POST">
+	<input type = "text" name = "username" placeholder = "username" required/> </br>
+	{% if error %}
+		<p class="error"><strong>Error:</strong> {{error}}</p>
+	{% endif %}
+
+{% for line in user_list %}
+<input type="radio" name="group_name" value={{line.groupName}} required/>{{line.groupName}}</input>
+	<br>
+{% endfor %}
+
+<br>
+<input type="submit" value="Submit" />
+<br>
+
+<br>
+<br>
+
+
+</form>
+
+<a href= "/home">GO back to home</a>
+<br>
+<a href="/logout">Logout</a>
+
+</body>

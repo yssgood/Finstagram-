@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+<body>
+
+
+Which group would you like to post photo?
+<br>
+
+<form action="/isPrivate" method = "GET">
+{% for line in user_list %}
+<input type="radio" name="group_name" value={{line.groupName}} required/>{{line.groupName}}</input>
+	<br>
+{% endfor %}
+
+
+
+<br>
+<br>
+
+<input type="submit" value="Upload">
+
+</form>
+
+        </div>
+        {% if message %}
+            {{ message }}
+        {% endif %}
+        <br/>
+
+<a href= "/home">GO back to home</a>
+<br>
+<a href="/logout">Logout</a>
+
+</body>

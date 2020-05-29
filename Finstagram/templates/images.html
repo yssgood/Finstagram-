@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Finstagram</title>
+    </head>
+    <body>
+        <h1>Image Gallery</h1>
+	<form action="/show_image" method = "GET">
+	<br>
+	Photo Information (From oldest to newest) 
+	<br>
+	{% for line in photo_list %}
+	<name="photoName" value={{line.photoID, line.photoOwner, line.caption}} required/>{{line.photoID,line.photoOwner, line.caption}}</input>
+	<br>
+	{% endfor %}
+	<br>
+	These are the photos you were tagged:
+	<br>
+	{% for line in tagData%}
+	<name = "tag" value={{line.photoID, line.photoOwner, line.filePath}} required/>{{line.photoID,line.photoOwner,line.filePath}}</input>
+	<br>
+	{% endfor %}
+	<br>
+        <div>
+            {% for image in images %}
+
+            <img src="/image/{{image.filePath}}" width="200"/>
+            {% endfor %}
+	    {% for image in tag_images %}
+
+            <img src="/image/{{image.filePath}}" width="200"/>
+            {% endfor %}
+        </div>
+	<br>
+	Tagged Information (From oldest to newest):
+	<br>
+	{% for line in photo_list2 %}
+	<name="photoName" value={{line.photoID, line.timestamp, line.fname, line.lname}} required/>{{line.photoID,line.timestamp, line.fname, line.lname}}</input>
+	<br>
+	{% endfor %}
+	<br>
+	<br>
+        <a href="/">Go back</a>
+    </body>
+</html>

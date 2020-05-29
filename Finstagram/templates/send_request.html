@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+
+
+Who do you like to follow?
+<br>
+
+<form action="/send_request" method = "POST">
+	<input type = "text" name = "followee" placeholder = "followee"> </br>
+	{% if error %}
+		<p class="error"><strong>Error:</strong> {{error}}</p>
+	{% endif %}
+<br>
+<br>
+
+<input type="submit" value="Send Request">
+
+</form>
+
+<a href= "/home">GO back to home</a>
+<br>
+<a href="/logout">Logout</a>
+
+</body>
